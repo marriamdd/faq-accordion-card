@@ -15,14 +15,17 @@ export default function Question_Component({
       onClick={() => {
         if (answer === questionIndex) {
           setAnswer(null);
-        }else{
+        } else {
           setAnswer(questionIndex);
         }
-       
       }}
+      answer={answer} questionIndex={questionIndex}
+      
     >
       <div>
-        <Question answer={answer} questionIndex={questionIndex}>{question}</Question>
+        <Question answer={answer} questionIndex={questionIndex}>
+          {question}
+        </Question>
         <img src={Arrow} alt="arrow icon" />
       </div>
       {answer === questionIndex ? <Answer>{currentAnswer}</Answer> : null}
@@ -42,13 +45,17 @@ const QuestionSection = styled.section`
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    & > img {
+      transform:${props=> props.answer === props.questionIndex ?"rotate(180deg)":"rotate(0deg)"};
+    }
   }
 `;
 const Question = styled.h2`
   font-size: 1.3rem;
-  font-weight: ${(props)=>props.answer===props.questionIndex?"700":"400"};
+  font-weight: ${(props) =>
+    props.answer === props.questionIndex ? "700" : "400"};
   line-height: 1.6rem;
-  color: #4B4C5F;
+  color: #4b4c5f;
 `;
 
 const Answer = styled.p`
