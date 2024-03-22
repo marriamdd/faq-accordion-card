@@ -22,7 +22,7 @@ export default function Question_Component({
       }}
     >
       <div>
-        <Question>{question}</Question>
+        <Question answer={answer} questionIndex={questionIndex}>{question}</Question>
         <img src={Arrow} alt="arrow icon" />
       </div>
       {answer === questionIndex ? <Answer>{currentAnswer}</Answer> : null}
@@ -46,9 +46,9 @@ const QuestionSection = styled.section`
 `;
 const Question = styled.h2`
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: ${(props)=>props.answer===props.questionIndex?"700":"400"};
   line-height: 1.6rem;
-  color: #787887;
+  color: #4B4C5F;
 `;
 
 const Answer = styled.p`
