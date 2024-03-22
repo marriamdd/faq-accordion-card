@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+  
     min-height: 100vh;
     display: flex;
     justify-content: center;

@@ -19,11 +19,11 @@ export default function Question_Component({
           setAnswer(questionIndex);
         }
       }}
-      answer={answer} questionIndex={questionIndex}
-      
+      answer={answer}
+      questionindex={questionIndex}
     >
       <div>
-        <Question answer={answer} questionIndex={questionIndex}>
+        <Question answer={answer} questionindex={questionIndex}>
           {question}
         </Question>
         <img src={Arrow} alt="arrow icon" />
@@ -46,16 +46,24 @@ const QuestionSection = styled.section`
     justify-content: space-between;
     cursor: pointer;
     & > img {
-      transform:${props=> props.answer === props.questionIndex ?"rotate(180deg)":"rotate(0deg)"};
+      transform: ${(props) =>
+        props.answer === props.questionindex
+          ? "rotate(180deg)"
+          : "rotate(0deg)"};
+      transition: 0.3s;
     }
   }
 `;
 const Question = styled.h2`
   font-size: 1.3rem;
   font-weight: ${(props) =>
-    props.answer === props.questionIndex ? "700" : "400"};
+    props.answer === props.questionindex ? "700" : "400"};
   line-height: 1.6rem;
   color: #4b4c5f;
+  transition: 0.3s;
+  &:hover {
+    color: #f47b56;
+  }
 `;
 
 const Answer = styled.p`
