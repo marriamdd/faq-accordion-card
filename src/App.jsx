@@ -15,7 +15,11 @@ function App() {
         <img src={IllustrationMobile} alt="girl illustration" />
 
         <Title>FAQ</Title>
-        <Question></Question>
+        <Question questionIndex={0} />
+        <Question questionIndex={1}/>
+        <Question questionIndex={2}/>
+        <Question questionIndex={3}/>
+        <Question questionIndex={3}/>
       </Main>
     </>
   );
