@@ -8,10 +8,18 @@ function App() {
 
   return (
     <>
-    <GlobalStyles/>
-    
+      <GlobalStyles />
+      <Main></Main>
     </>
   );
 }
 
 export default App;
+const Main = styled.main`
+  width: 32.7rem;
+  background: white;
+  padding: 13, 2rem 2.4rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.8;
+`;
