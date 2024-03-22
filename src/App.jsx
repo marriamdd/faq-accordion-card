@@ -8,7 +8,7 @@ import data from "./data.json";
 import Question from "./components/Question_Component";
 function App() {
   const [answer, setAnswer] = useState(null);
-  console.log(answer);
+
   return (
     <>
       <GlobalStyles />

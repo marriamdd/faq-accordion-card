@@ -11,7 +11,16 @@ export default function Question_Component({
   const currentAnswer = data[questionIndex].answer;
 
   return (
-    <QuestionSection onClick={() => setAnswer(questionIndex)}>
+    <QuestionSection
+      onClick={() => {
+        if (answer === questionIndex) {
+          setAnswer(null);
+        }else{
+          setAnswer(questionIndex);
+        }
+       
+      }}
+    >
       <div>
         <Question>{question}</Question>
         <img src={Arrow} alt="arrow icon" />
@@ -32,6 +41,7 @@ const QuestionSection = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 `;
 const Question = styled.h2`
