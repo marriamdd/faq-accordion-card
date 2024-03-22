@@ -1,18 +1,22 @@
 import styled from "styled-components";
 import Arrow from "/images/icon-arrow-down.svg";
 import data from "../data.json";
-console.log(data);
-export default function Question_Component({ questionIndex }) {
+
+export default function Question_Component({
+  questionIndex,
+  setAnswer,
+  answer,
+}) {
   const question = data[questionIndex].question;
-  const answer = data[questionIndex].answer;
+  const currentAnswer = data[questionIndex].answer;
 
   return (
-    <QuestionSection>
+    <QuestionSection onClick={() => setAnswer(questionIndex)}>
       <div>
         <Question>{question}</Question>
         <img src={Arrow} alt="arrow icon" />
       </div>
-      <Answer>{answer}</Answer>
+      {answer === questionIndex ? <Answer>{currentAnswer}</Answer> : null}
     </QuestionSection>
   );
 }
@@ -23,11 +27,11 @@ const QuestionSection = styled.section`
   gap: 1.2rem;
   border-bottom: 1px solid #e8e8ea;
   padding-bottom: 1.8rem;
-
+  width: 100%;
   & > div {
     display: flex;
     align-items: center;
-    gap: 3.4rem;
+    justify-content: space-between;
   }
 `;
 const Question = styled.h2`

@@ -4,10 +4,11 @@ import { GlobalStyles } from "./Globals";
 import "./App.css";
 import IllustrationMobile from "/images/illustration-woman-online-mobile.svg";
 import IllustrationMobileSHadow from "/images/bg-pattern-mobile.svg";
+import data from "./data.json";
 import Question from "./components/Question_Component";
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [answer, setAnswer] = useState(null);
+  console.log(answer);
   return (
     <>
       <GlobalStyles />
@@ -15,11 +16,14 @@ function App() {
         <img src={IllustrationMobile} alt="girl illustration" />
 
         <Title>FAQ</Title>
-        <Question questionIndex={0} />
-        <Question questionIndex={1}/>
-        <Question questionIndex={2}/>
-        <Question questionIndex={3}/>
-        <Question questionIndex={3}/>
+        {data.map((item, index) => (
+          <Question
+            key={index}
+            questionIndex={index}
+            setAnswer={setAnswer}
+            answer={answer}
+          />
+        ))}
       </Main>
     </>
   );
@@ -38,7 +42,7 @@ const Main = styled.main`
   box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.5);
   position: relative;
 
-& >img {
+  & > img {
     width: 23.7rem;
     height: 18rem;
     position: absolute;
