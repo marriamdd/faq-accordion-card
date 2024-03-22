@@ -9,7 +9,9 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Main></Main>
+      <Main>
+<Title>FAQ</Title>
+      </Main>
     </>
   );
 }
@@ -17,9 +19,18 @@ function App() {
 export default App;
 const Main = styled.main`
   width: 32.7rem;
-  background: white;
-  padding: 13, 2rem 2.4rem 4.8rem;
+  padding: 13.2rem 2.4rem 4.8rem;
   display: flex;
+  align-items:center;
   flex-direction: column;
-  gap: 3.8;
+  gap: 3.8rem;
+  border-radius: 23px;
+  background: #fff;
+  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.5);
 `;
+const Title=styled.h1`
+  color: #1E1F36;
+font-size: 3.2rem;
+font-weight: 700;
+line-height: normal;
+`
