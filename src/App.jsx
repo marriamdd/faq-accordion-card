@@ -14,34 +14,43 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <DesktopBox  src="/images/illustration-box-desktop.svg" alt="desktopBox" />
-      <Main>
-        <img
-          className="mobileWomen"
-          src={IllustrationMobile}
-          alt="illustration-woman-online-mobile"
-        />
-        <img
-          className="desktopWomen"
-          src={IllustrationDesktop}
-          alt="illustration-woman-online-desktop"
-        />
 
-        <Title>FAQ</Title>
-        {data.map((item, index) => (
-          <Question
-            key={index}
-            questionIndex={index}
-            setAnswer={setAnswer}
-            answer={answer}
+      <Div>
+        <DesktopBox
+          src="/images/illustration-box-desktop.svg"
+          alt="desktopBox"
+        />
+        <Main>
+          <img
+            className="mobileWomen"
+            src={IllustrationMobile}
+            alt="illustration-woman-online-mobile"
           />
-        ))}
-      </Main>
+          <img
+            className="desktopWomen"
+            src={IllustrationDesktop}
+            alt="illustration-woman-online-desktop"
+          />
+
+          <Title>FAQ</Title>
+          {data.map((item, index) => (
+            <Question
+              key={index}
+              questionIndex={index}
+              setAnswer={setAnswer}
+              answer={answer}
+            />
+          ))}
+        </Main>
+      </Div>
     </>
   );
 }
 
 export default App;
+const Div=styled.div`
+  position: relative;
+`
 const Main = styled.main`
   width: 32.7rem;
   padding: 13.2rem 2.4rem 4.8rem;
@@ -81,7 +90,6 @@ const Main = styled.main`
     .mobileWomen {
       display: none;
     }
-   
   }
 `;
 const Title = styled.h1`
@@ -90,13 +98,13 @@ const Title = styled.h1`
   font-weight: 700;
   line-height: normal;
 `;
-const DesktopBox=styled.img`
+const DesktopBox = styled.img`
   display: none;
-  @media only screen and (min-width: 90rem){
+  @media only screen and (min-width: 90rem) {
     display: flex;
-    position:absolute;
-    left: 19rem;
-      top: 39rem;
-      z-index: 99999;
+    position: absolute;
+  left: -9.5rem;
+    top: 24rem; 
+    z-index: 99999;
   }
-`
+`;

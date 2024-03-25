@@ -11,10 +11,11 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+   
   }
 
   body {
-  
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,4 +24,3 @@ export const GlobalStyles = createGlobalStyle`
     background: linear-gradient(180deg, #B068E9 0%, #6463E7 100%);
   }
 `;
-
